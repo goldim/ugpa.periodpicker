@@ -1,0 +1,19 @@
+#. NO LONGER USED
+msgid "Yesterday"
+msgstr ""
+
+#. NO LONGER USED
+msgid "Interval"
+msgstr ""
+
+#. NO LONGER USED
+msgid "Today"
+msgstr ""
+
+#. NO LONGER USED
+msgid "Current minute"
+msgstr ""
+
+#. NO LONGER USED
+msgid "Current hour"
+msgstr ""

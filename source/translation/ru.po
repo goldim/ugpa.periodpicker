@@ -1,0 +1,19 @@
+#. NO LONGER USED
+msgid "Yesterday"
+msgstr "Вчера"
+
+#. NO LONGER USED
+msgid "Interval"
+msgstr "Интервал"
+
+#. NO LONGER USED
+msgid "Today"
+msgstr "Сегодня"
+
+#. NO LONGER USED
+msgid "Current minute"
+msgstr "Текущая минута"
+
+#. NO LONGER USED
+msgid "Current hour"
+msgstr "Текущий час"
