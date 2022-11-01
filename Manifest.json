@@ -30,6 +30,7 @@
   },
 
   "requires": {
-    "@qooxdoo/framework": "^7.3.3"
+    "@qooxdoo/framework": "^7.3.3",
+    "goldim/ugpa.timepicker": "0.1.0"
   }
 }
