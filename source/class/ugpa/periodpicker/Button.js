@@ -1,18 +1,68 @@
-/* ************************************************************************
+qx.Class.define("ugpa.periodpicker.Button", {
+    extend : qx.ui.form.MenuButton,
+    include: [qx.locale.MTranslation],
 
-   Copyright: 2022 ООО "НПП "ЮГПРОМАВТОМАТИЗАЦИЯ"
+    construct() {
+        // noinspection JSAnnotator
+        super(this.tr("Interval"));
+        this.__createMenu();
+    },
 
-   License: MIT license
+    events:{
+        "changePeriod": "qx.event.type.Data"
+    },
 
-   Authors: Dmitrii Zolotov (goldim) zolotovdy@yandex.ru
+    members: {
+        __getButtons() {
+            const helper = ugpa.periodpicker.helper.DateTime;
+            return [
+                {
+                    label: this.tr("Current minute"),
+                    method: helper.getCurrentMinutePeriod.bind(helper)
+                },
+                {
+                    label: this.tr("Current hour"),
+                    method: helper.getCurrentHourPeriod.bind(helper)
+                },
+                {
+                    label: this.tr("Today"),
+                    method: helper.getTodayPeriod.bind(helper)
+                },
+                {
+                    label: this.tr("Yesterday"),
+                    method: helper.getYesterdayPeriod.bind(helper)
+                }
+            ];
+        },
 
-************************************************************************ */
+        __createMenu() {
+            const menu = new qx.ui.menu.Menu();
+            this.__getButtons().forEach(function(button) {
+                this.__createChangeMenuLabelBtn(button.label, button.method, menu);
+            }, this);
+            this.setMenu(menu);
+        },
 
-/**
- * This is an example of a contrib library, providing a very special button 
- * @asset(ugpa/periodpicker/*)
- */
-qx.Class.define("ugpa.periodpicker.Button",
-{
-  extend : qx.ui.form.Button
+        __createChangeMenuLabelBtn(label, executeHandler, menu) {
+            const btn = new qx.ui.menu.Button(label); 
+            btn.addListener("execute", function() {
+                this.__fireChangePeriodEvent(label, executeHandler);
+            }, this);
+            menu.add(btn);
+            return btn;
+        },
+
+        __fireChangePeriodEvent(label, getPeriodMethod) {
+            this.setLabel(label);
+            const period = getPeriodMethod();
+            this.fireDataEvent("changePeriod", period);
+        },
+
+        resetLabel() {
+            const intervalLabel = this.tr("Interval");
+            if (this.getLabel() !== intervalLabel) {
+                this.setLabel(intervalLabel);
+            }
+        }
+    }
 });

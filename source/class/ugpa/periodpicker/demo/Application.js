@@ -47,18 +47,14 @@ qx.Class.define("ugpa.periodpicker.demo.Application",
       -------------------------------------------------------------------------
       */
 
-      // Create a button
-      var button1 = new ugpa.periodpicker.Button("Very special button", "ugpa/periodpicker/test.png");
+      // Create a picker
+      const picker = new ugpa.periodpicker.Picker();
 
       // Document is the application root
-      var doc = this.getRoot();
+      const doc = this.getRoot();
 
       // Add button to document at fixed coordinates
-      doc.add(button1, {left: 100, top: 50});
-
-      // Add an event listener
-      button1.addListener("execute", function(e) {
-      });
+      doc.add(picker, {left: 100, top: 50});
     }
   }
 });
