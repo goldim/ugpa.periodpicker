@@ -14,13 +14,29 @@
     }
   ],
   "defaultTarget": "source",
-  "locales": ["en","ru"],
-
+  "locales": [
+    "en",
+    "ru"
+  ],
   "applications": [
     {
       "class": "ugpa.periodpicker.demo.Application",
       "theme": "ugpa.periodpicker.theme.Theme",
       "name": "ugpa.periodpicker"
+    },
+    {
+      "class": "qxl.testtapper.Application",
+      "name": "testtapper",
+      "theme": "qx.theme.Simple",
+      "title": "Qooxdoo TestTAPper",
+      "environment": {
+        "qx.icontheme": "Tango",
+        "qxl.testtapper.testNameSpace": "ugpa.periodpicker.test"
+      },
+      "include": [
+        "ugpa.periodpicker.test.*"
+      ],
+      "exclude": []
     }
   ]
 }
