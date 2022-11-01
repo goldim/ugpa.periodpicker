@@ -1,0 +1,35 @@
+{
+ "$schema": "https://qooxdoo.org/schema/Manifest-2-0-0.json",
+  "info" :
+  {
+    "name" : "ugpa.periodpicker",
+
+    "summary" : "period picker widget",
+    "description" : " widget to select range between two date-times",
+
+    "homepage" : "https://github.com/goldim/ugpa.periodpicker",
+
+    "license" : "MIT license",
+    "authors" : [
+  {
+    "name": "Dmitrii Zolotov (goldim)",
+    "email": "zolotovdy@yandex.ru"
+  }
+],
+
+    "version" : "0.1.0"
+  },
+
+  "provides" :
+  {
+    "namespace"   : "ugpa.periodpicker",
+    "encoding"    : "utf-8",
+    "class"       : "source/class",
+    "resource"    : "source/resource",
+    "translation" : "source/translation"
+  },
+
+  "requires": {
+    "@qooxdoo/framework": "^7.3.3"
+  }
+}
